@@ -27,10 +27,8 @@ public class Midterm {
   public static void main(String[] args) {
     //INPUT 
     try {
-      //System.out.println("ARG = " + args[0]);
-      
-      //Scanner s = new Scanner(new BufferedReader(new FileReader(args[0] + "/input.txt")));
-      Scanner s = new Scanner(new BufferedReader(new FileReader("input.txt")));
+      Scanner s = new Scanner(new BufferedReader(new FileReader(args[0] + "/input.txt"))); //for taking in directory as argument
+      //Scanner s = new Scanner(new BufferedReader(new FileReader("input.txt"))); //for reading in from file
       int N, M, T, L;
       N = s.nextInt(); M = s.nextInt(); T = s.nextInt(); L = s.nextInt();
       s.nextLine();
@@ -47,19 +45,6 @@ public class Midterm {
       System.out.println("Error with file reading in main");
     }
 
-    /* // OUTPUT
-          BufferedWriter out1 = new BufferedWriter(new FileWriter ("output1.txt"));
-          BufferedWriter out2 = new BufferedWriter(new FileWriter ("output2.txt"));
-          out1.write(Integer.toString(14) + "\n");
-          out1.close();
-          out2.write(Integer.toString(3) + "\n");
-          out2.write(Integer.toString(2) + "\n");
-          out2.write(Integer.toString(0) + "\n");
-          out2.write(Integer.toString(4) + "\n");
-          out2.write(Integer.toString(0) + "\n");
-          out2.write(Integer.toString(3) + "\n");
-          out2.close();
-        } catch (Exception e) {} */
   }
   public static int[] getTrace(Scanner s, int T) {
     int trace[] = null; 
@@ -134,7 +119,6 @@ public class Midterm {
       }
       LP curr = new LP(to, weight);
       labels.get(from).get(label).add(curr);
-      // System.out.println(curr.node + ", " + curr.weight);
     }
 
     return labels;
@@ -159,7 +143,6 @@ public class Midterm {
 
   public static void printLabels(ArrayList< ArrayList< HashSet<LP> > > labels, int N, int L) {
     System.out.println("LABELS CONTENTS");
-    // Midterm.printHashSet(labels.get(4).get(0));
     for (int i = 0; i < N; i++) {
       for (int j = 0; j < L; j++) {
         System.out.println("labels[" + i + "][" + j + "]");
@@ -173,7 +156,7 @@ public class Midterm {
   public static void algorithm(int trace[], SB V[][], ArrayList< ArrayList< HashSet<LP> > > labels, 
       int N, int T) {
 
-    //System.out.println("Running algorithm...");
+    System.out.println("Running algorithm...");
     for (int i = 1; i <= T; i++) {
       int curr_label = trace[i-1];
       for (int v = 0; v < N; v++) {
@@ -207,8 +190,6 @@ public class Midterm {
       }
     }
     writeFile1((int)min);
-    //System.out.println("MIN WEIGHT = " + (int)min);
-   // System.out.println("V = " + v);
     Midterm.tracePath(V, v, T, labels, min, trace);
   }
   
