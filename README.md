@@ -9,10 +9,10 @@ Input format:
 
 First line: N M T L 
 
-N -- vertices can take on values from {0, ... , N}
-M -- there are m edges
-T -- the trace (second line) has T labels
-L -- labels can take on values from {0, ... , L}
+- N -- vertices can take on values from {0, ... , N}
+- M -- there are m edges
+- T -- the trace (second line) has T labels
+- L -- labels can take on values from {0, ... , L}
 
 Second line: int[] trace
 T space separated 0's and 1's. E.g if T = 5, the second line could be: 0 1 1 0 0
