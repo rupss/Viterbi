@@ -5,6 +5,8 @@ dynamic programming.
 
 Assignment spec: http://stanford.edu/class/archive/cs/cs161/cs161.1136/hws/midterm.pdf
 
+Problem: Given a directed graph G that models a probabilistic process, 
+
 Input format: 
 
 First line: N M T L 
@@ -14,7 +16,6 @@ First line: N M T L
 - T -- the trace (second line) has T labels
 - L -- labels can take on values from {0, ... , L}
 
-Second line: int[] trace
-T space separated 0's and 1's. E.g if T = 5, the second line could be: 0 1 1 0 0
+Second line: int[] trace -- T space separated 0's and 1's. E.g if T = 5, the second line could be: 0 1 1 0 0
 
-Each subsequent line: 
+Each subsequent line encodes an edge. Format: edge.from edge.to edge.label edge.weight
