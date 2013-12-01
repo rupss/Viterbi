@@ -1,6 +1,9 @@
+# Viterbi
+
 For CS161 (Algorithms), Spring 2013. 
 
-USAGE: 
+## USAGE
+
 - Compile by calling make
 - To pass in a directory with an input.txt as a parameter (as with the test cases and the run_all.sh script): ./Midterm <input file path>
 - To read directly from "input.txt", comment out line 30 and uncomment line 31: ./Midterm or make run
